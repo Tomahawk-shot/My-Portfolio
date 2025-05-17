@@ -1,0 +1,135 @@
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #1e3a8a;
+  color: #e0f2fe;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.navbar-links a {
+  color: #e0f2fe;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  flex-grow: 1;
+  text-align: center;
+  flex-basis: auto;
+}
+
+.navbar-links a:hover {
+  color: #7dd3fc;
+}
+
+.navbar-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar-icons i {
+  font-size: 1.3rem;
+  color: #e0f2fe;
+  transition: color 0.3s ease;
+}
+
+.navbar-icons a {
+  color: #e0f2fe;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar-icons a:hover {
+  color: #7dd3fc;
+}
+
+.navbar-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc; 
+  transition: 0.4s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #1e3a8a;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+body.dark-mode .slider {
+  background-color: #555; 
+}
+
+body.dark-mode .slider:before {
+  background-color: #fff; 
+}
+
+@media (max-width: 768px) {
+  .navbar-links {
+    gap: 10px;
+  }
+
+  .navbar-icons i {
+    font-size: 1.2rem;
+  }
+
+  .navbar-icons {
+    justify-content: center;
+  }
+}
